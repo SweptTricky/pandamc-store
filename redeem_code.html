@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PandaMC 🐼 | Redeem Discount Code</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #6a0dad, #ff004f);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .input-box {
+      margin: 1rem auto;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      max-width: 400px;
+    }
+    input, button {
+      padding: 0.6rem;
+      width: 80%;
+      margin-top: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #ff4b2b;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #owner-panel {
+      display: none;
+      margin-top: 2rem;
+    }
+    .note {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎁 Redeem a Discount Code - PandaMC</h1>
+
+  <!-- User Redeem Section -->
+  <div class="input-box">
+    <p>Enter your code to unlock a discount</p>
+    <input type="text" id="redeemInput" placeholder="Enter redeem code"/>
+    <button onclick="redeemCode()">Redeem</button>
+    <p id="redeemMessage"></p>
+  </div>
+
+  <!-- Owner Code Generator -->
+  <div id="owner-panel" class="input-box">
+    <h3>🔒 Owner Code Creator</h3>
+    <input type="text" id="newCodeInput" placeholder="Code name (e.g. PANDA50)"/>
+    <input type="number" id="discountInput" placeholder="Discount (%)"/>
+    <button onclick="addCode()">Add Code</button>
+    <p id="codeList" class="note"></p>
+  </div>
+
+  <script>
+    const codes = {
+      "PANDA50": 50,
+      "GIVE25": 25
+    };
+
+    function redeemCode() {
+      const input = document.getElementById('redeemInput').value.trim().toUpperCase();
+      const message = document.getElementById('redeemMessage');
+
+      if (input in codes) {
+        const discount = codes[input];
+        message.innerHTML = `🎉 Code applied: <strong>${discount}% OFF</strong>`;
+        // Optionally delete code after redeeming:
+        // delete codes[input];
+      } else {
+        message.textContent = `❌ Invalid or expired code.`;
+      }
+    }
+
+    function addCode() {
+      const newCode = document.getElementById('newCodeInput').value.trim().toUpperCase();
+      const discount = parseInt(document.getElementById('discountInput').value.trim());
+
+      if (newCode && !isNaN(discount) && discount > 0) {
+        codes[newCode] = discount;
+        updateCodeList();
+      } else {
+        alert("Please enter a valid code name and discount %.");
+      }
+    }
+
+    function updateCodeList() {
+      const codeText = Object.entries(codes)
+        .map(([code, discount]) => `${code}: ${discount}%`)
+        .join("<br>");
+      document.getElementById('codeList').innerHTML = `<strong>Codes:</strong><br>${codeText}`;
+    }
+
+    // ✅ Updated Password
+    const ownerPassword = "pandamcserverofficial9080";
+    const pass = prompt("Owner login? If yes, enter password:");
+
+    if (pass === ownerPassword) {
+      document.getElementById('owner-panel').style.display = 'block';
+      updateCodeList();
+    }
+  </script>
+
+</body>
+</html>
