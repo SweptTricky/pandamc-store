@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PandaMC 🔑 Crate Keys</title>
+  <style>
+    body {
+      background: linear-gradient(to top left, #ff6a00, #ee0979);
+      color: white;
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, nav, section {
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      margin: 1rem auto;
+      padding: 1rem;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .buy-button {
+      background: #d63031;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PandaMC 🔑 Crate Keys</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="coins.html">Coins</a>
+    <a href="keys.html">Crate Keys</a>
+  </nav>
+
+  <section>
+    <div class="card">
+      <h2>1x Rare Key</h2>
+      <p>₹40 - Contains rare items</p>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="card">
+      <h2>5x Mythic Keys</h2>
+      <p>₹75 - Epic crate bundle</p>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+    <div class="card">
+      <h2>10x God Keys</h2>
+      <p>₹150 - Ultimate rewards</p>
+      <a href="#" class="buy-button">Buy Now</a>
+    </div>
+  </section>
+</body>
+<!-- Redeem Code Section (Universal) -->
+<section style="text-align:center; padding: 2rem;">
+  <h2>🎁 Redeem a Discount Code</h2>
+  <p>Enter a code to apply discount on your next purchase</p>
+  <input type="text" id="universalCode" placeholder="Enter code"
+         style="padding:0.6rem; border-radius:6px; width:200px;" />
+  <button onclick="checkUniversalCode()"
+          style="padding:0.6rem 1rem; margin-left:10px; background:#00b894; color:white; border:none; border-radius:6px; cursor:pointer;">
+    Apply
+  </button>
+  <p id="universalCodeMsg" style="margin-top:1rem;"></p>
+</section>
+
+<script>
+  function checkUniversalCode() {
+    const codes = {
+      "PANDA50": 50,
+      "KING25": 25,
+      "GIVE25": 25
+    };
+    const input = document.getElementById('universalCode').value.trim().toUpperCase();
+    const msg = document.getElementById('universalCodeMsg');
+    if (codes[input]) {
+      msg.innerHTML = `✅ Code <strong>${input}</strong> applied: <strong>${codes[input]}% OFF</strong> will be reflected at checkout.`;
+    } else {
+      msg.textContent = "❌ Invalid or expired code.";
+    }
+  }
+</script>
+</html>
