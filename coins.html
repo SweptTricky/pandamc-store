@@ -1,102 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PandaMC 💰 Coins</title>
+  <meta charset="UTF-8">
+  <title>PandaMC - Coins</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background: linear-gradient(to right, #007cf0, #00dfd8);
-      color: white;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-    }
-    header, nav, section {
-      text-align: center;
-      padding: 1rem;
-    }
-    nav a {
-      margin: 0 1rem;
+      font-family: Arial, sans-serif;
+      background: url("https://i.postimg.cc/nMfZxfDC/images-2.jpg") no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      text-decoration: none;
-      background: rgba(255,255,255,0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+    }
+    header {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1200px;
     }
     .card {
-      background: rgba(255,255,255,0.1);
-      margin: 1rem auto;
-      padding: 1rem;
-      width: 80%;
+      background: rgba(0,0,0,0.6);
       border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .buy-button {
-      background: #00b894;
-      color: white;
-      padding: 0.5rem 1rem;
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+    .card h2 {
+      margin-bottom: 10px;
+    }
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ffb700;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
       text-decoration: none;
-      border-radius: 20px;
+      transition: background 0.2s ease;
+    }
+    .btn:hover {
+      background: #e0a200;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>PandaMC 💰 Coins</h1>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="coins.html">Coins</a>
-    <a href="keys.html">Crate Keys</a>
-  </nav>
-
-  <section>
+  <header>PandaMC - COINS</header>
+  <div class="container">
     <div class="card">
-      <h2>500 Coins</h2>
-      <p>₹50 - Starter pack</p>
-      <a href="#" class="buy-button">Buy Now</a>
+      <h2>💰 100 Coins</h2>
+      <p>Basic pack to get you started!</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
     </div>
     <div class="card">
-      <h2>1200 Coins</h2>
-      <p>₹120 - Bonus pack</p>
-      <a href="#" class="buy-button">Buy Now</a>
+      <h2>💸 500 Coins</h2>
+      <p>More coins, more power!</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
     </div>
     <div class="card">
-      <h2>3000 Coins</h2>
-      <p>₹250 - Mega pack</p>
-      <a href="#" class="buy-button">Buy Now</a>
+      <h2>🏦 1,000 Coins</h2>
+      <p>Popular choice among regulars.</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
     </div>
-  </section>
+    <div class="card">
+      <h2>💎 2,500 Coins</h2>
+      <p>Get an edge over others!</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <h2>🤑 5,000 Coins</h2>
+      <p>For serious PandaMC players!</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
+    </div>
+    <div class="card">
+      <h2>👑 10,000 Coins</h2>
+      <p>Become a coin king!</p>
+      <a href="https://dsc.gg/panda-mc" class="btn">Buy Now</a>
+    </div>
+  </div>
 </body>
-<!-- Redeem Code Section (Universal) -->
-<section style="text-align:center; padding: 2rem;">
-  <h2>🎁 Redeem a Discount Code</h2>
-  <p>Enter a code to apply discount on your next purchase</p>
-  <input type="text" id="universalCode" placeholder="Enter code"
-         style="padding:0.6rem; border-radius:6px; width:200px;" />
-  <button onclick="checkUniversalCode()"
-          style="padding:0.6rem 1rem; margin-left:10px; background:#00b894; color:white; border:none; border-radius:6px; cursor:pointer;">
-    Apply
-  </button>
-  <p id="universalCodeMsg" style="margin-top:1rem;"></p>
-</section>
-
-<script>
-  function checkUniversalCode() {
-    const codes = {
-      "PANDA50": 50,
-      "KING25": 25,
-      "GIVE25": 25
-    };
-    const input = document.getElementById('universalCode').value.trim().toUpperCase();
-    const msg = document.getElementById('universalCodeMsg');
-    if (codes[input]) {
-      msg.innerHTML = `✅ Code <strong>${input}</strong> applied: <strong>${codes[input]}% OFF</strong> will be reflected at checkout.`;
-    } else {
-      msg.textContent = "❌ Invalid or expired code.";
-    }
-  }
-</script>
 </html>
