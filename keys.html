@@ -2,101 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PandaMC 🔑 Crate Keys</title>
+  <title>PandaMC - Buy Keys</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background: linear-gradient(to top left, #ff6a00, #ee0979);
-      color: white;
-      font-family: Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.postimg.cc/nMfZxfDC/images-2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      animation: fadeIn 1s ease-in-out;
     }
-    header, nav, section {
+    header {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 1rem 2rem;
       text-align: center;
-      padding: 1rem;
     }
-    nav a {
-      margin: 0 1rem;
-      color: white;
-      text-decoration: none;
-      background: rgba(255,255,255,0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      margin: 1rem auto;
+    h2 { text-align: center; margin: 20px 0; }
+    .store-box {
+      background: rgba(0, 0, 0, 0.6);
       padding: 1rem;
-      width: 80%;
       border-radius: 10px;
+      text-align: center;
+      margin: 1rem;
+      width: 250px;
+      transition: transform 0.3s ease;
     }
-    .buy-button {
-      background: #d63031;
+    .store-box:hover { transform: scale(1.05); }
+    .store-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem;
+    }
+    .btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff4d4d;
       color: white;
-      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
       text-decoration: none;
-      border-radius: 20px;
+    }
+    .btn:hover { background-color: #e63946; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>PandaMC 🔑 Crate Keys</h1>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="coins.html">Coins</a>
-    <a href="keys.html">Crate Keys</a>
-  </nav>
-
-  <section>
-    <div class="card">
-      <h2>1x Rare Key</h2>
-      <p>₹40 - Contains rare items</p>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="card">
-      <h2>5x Mythic Keys</h2>
-      <p>₹75 - Epic crate bundle</p>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="card">
-      <h2>10x God Keys</h2>
-      <p>₹150 - Ultimate rewards</p>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-  </section>
+  <header><h1>PandaMC Crate Keys</h1></header>
+  <h2>Buy Keys to Open Crates</h2>
+  <div class="store-categories">
+    <div class="store-box"><h3>🔑 1 Key</h3><p>Open one crate with surprise reward.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>🔑 5 Keys</h3><p>Open 5 crates. Higher chance for rare loot.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>🔑 10 Keys</h3><p>Best value! 10 crates to unlock huge wins.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+  </div>
 </body>
-<!-- Redeem Code Section (Universal) -->
-<section style="text-align:center; padding: 2rem;">
-  <h2>🎁 Redeem a Discount Code</h2>
-  <p>Enter a code to apply discount on your next purchase</p>
-  <input type="text" id="universalCode" placeholder="Enter code"
-         style="padding:0.6rem; border-radius:6px; width:200px;" />
-  <button onclick="checkUniversalCode()"
-          style="padding:0.6rem 1rem; margin-left:10px; background:#00b894; color:white; border:none; border-radius:6px; cursor:pointer;">
-    Apply
-  </button>
-  <p id="universalCodeMsg" style="margin-top:1rem;"></p>
-</section>
-
-<script>
-  function checkUniversalCode() {
-    const codes = {
-      "PANDA50": 50,
-      "KING25": 25,
-      "GIVE25": 25
-    };
-    const input = document.getElementById('universalCode').value.trim().toUpperCase();
-    const msg = document.getElementById('universalCodeMsg');
-    if (codes[input]) {
-      msg.innerHTML = `✅ Code <strong>${input}</strong> applied: <strong>${codes[input]}% OFF</strong> will be reflected at checkout.`;
-    } else {
-      msg.textContent = "❌ Invalid or expired code.";
-    }
-  }
-</script>
 </html>
