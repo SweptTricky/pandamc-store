@@ -2,101 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PandaMC 🛡️ Ranks</title>
+  <title>Buy Ranks - PandaMC</title>
   <style>
     body {
-      background: linear-gradient(to bottom right, #6a0dad, #ff004f);
-      color: white;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://i.postimg.cc/nMfZxfDC/images-2.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
-    header, nav, section {
-      text-align: center;
-      padding: 1rem;
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar h1 {
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
     nav a {
-      margin: 0 1rem;
-      color: white;
       text-decoration: none;
-      background: rgba(255,255,255,0.2);
-      padding: 0.5rem 1rem;
+      color: white;
+      font-weight: bold;
+    }
+    .store-page {
+      padding: 2rem;
+      text-align: center;
+    }
+    .store-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .store-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      width: 280px;
+    }
+    .btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      border: none;
       border-radius: 8px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      margin: 1rem auto;
-      padding: 1rem;
-      width: 80%;
-      border-radius: 10px;
-    }
-    .buy-button {
-      background: #ff4b2b;
+      background-color: #ff4747;
       color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      background-color: #ff2f2f;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>PandaMC 🛡️ Ranks</h1>
+    <div class="navbar">
+      <h1>PandaMC</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="coins.html">Coins</a>
-    <a href="keys.html">Crate Keys</a>
-  </nav>
-
-  <section>
-    <div class="card">
-      <h2>Warrior Rank</h2>
-      <p>₹100 - Basic perks</p>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="card">
-      <h2>Knight Rank</h2>
-      <p>₹250 - Mid-tier perks</p>
-      <a href="#" class="buy-button">Buy Now</a>
-    </div>
-    <div class="card">
-      <h2>King Rank</h2>
-      <p>₹500 - Premium perks</p>
-      <a href="#" class="buy-button">Buy Now</a>
+  <section class="store-page">
+    <h2>Buy Ranks</h2>
+    <div class="store-categories">
+      <div class="store-box">
+        <h3>Panda+</h3>
+        <p>Get exclusive prefix, particles and /hat command!</p>
+        <button class="btn">Buy for ₹49</button>
+      </div>
+      <div class="store-box">
+        <h3>Legend</h3>
+        <p>Includes all Panda+ perks + /nick & /fly in spawn!</p>
+        <button class="btn">Buy for ₹99</button>
+      </div>
+      <div class="store-box">
+        <h3>Master</h3>
+        <p>All previous perks + priority queue and custom tag!</p>
+        <button class="btn">Buy for ₹149</button>
+      </div>
     </div>
   </section>
 </body>
-<!-- Redeem Code Section (Universal) -->
-<section style="text-align:center; padding: 2rem;">
-  <h2>🎁 Redeem a Discount Code</h2>
-  <p>Enter a code to apply discount on your next purchase</p>
-  <input type="text" id="universalCode" placeholder="Enter code"
-         style="padding:0.6rem; border-radius:6px; width:200px;" />
-  <button onclick="checkUniversalCode()"
-          style="padding:0.6rem 1rem; margin-left:10px; background:#00b894; color:white; border:none; border-radius:6px; cursor:pointer;">
-    Apply
-  </button>
-  <p id="universalCodeMsg" style="margin-top:1rem;"></p>
-</section>
-
-<script>
-  function checkUniversalCode() {
-    const codes = {
-      "PANDA50": 50,
-      "KING25": 25,
-      "GIVE25": 25
-    };
-    const input = document.getElementById('universalCode').value.trim().toUpperCase();
-    const msg = document.getElementById('universalCodeMsg');
-    if (codes[input]) {
-      msg.innerHTML = `✅ Code <strong>${input}</strong> applied: <strong>${codes[input]}% OFF</strong> will be reflected at checkout.`;
-    } else {
-      msg.textContent = "❌ Invalid or expired code.";
-    }
-  }
-</script>
-</html>
+        </html>
