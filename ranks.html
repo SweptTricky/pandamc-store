@@ -2,121 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Buy Ranks - PandaMC</title>
+  <title>PandaMC - Buy Ranks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: url('https://i.postimg.cc/nMfZxfDC/images-2.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
       animation: fadeIn 1s ease-in-out;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     header {
-      background-color: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      animation: slideDown 1s ease;
     }
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    .navbar h1 { font-size: 1.5rem; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a {
-      text-decoration: none; color: white;
-      font-weight: bold; transition: color 0.3s;
-    }
-    nav a:hover { color: #ff4d4d; }
-    .store-page { padding: 2rem; text-align: center; }
-    .store-categories {
-      display: flex; flex-wrap: wrap;
-      gap: 2rem; justify-content: center; margin-top: 2rem;
+    h1, h2 {
+      text-align: center;
+      margin-top: 20px;
     }
     .store-box {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem; border-radius: 12px;
-      width: 280px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      margin: 1rem;
+      width: 250px;
+      transition: transform 0.3s ease;
     }
-    .store-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
+    .store-box:hover { transform: scale(1.05); }
+    .store-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem;
     }
     .btn {
-      margin-top: 1rem; padding: 0.5rem 1.2rem;
-      border: none; border-radius: 8px;
-      background-color: #ff4747;
-      color: white; cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s, transform 0.2s;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
-    .btn:hover {
-      background-color: #ff2f2f;
-      transform: scale(1.05);
+    .btn:hover { background-color: #e63946; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <h1>PandaMC</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-      </ul>
-    </nav>
-  </header>
-  <section class="store-page">
-    <h2>Buy Ranks</h2>
-    <div class="store-categories">
-
-      <div class="store-box">
-        <h3>1. PANDA+ <small>(Top Rank)</small></h3>
-        <p>Access all features, exclusive tag, custom particles, priority queue & more!</p>
-        <button class="btn">Buy for ₹299</button>
-      </div>
-
-      <div class="store-box">
-        <h3>2. DEADLIEST <small>(2nd Top Rank)</small></h3>
-        <p>Deadly perks, kill effects, red name & access to /trail!</p>
-        <button class="btn">Buy for ₹249</button>
-      </div>
-
-      <div class="store-box">
-        <h3>3. FAMOUS <small>(3rd Top Rank)</small></h3>
-        <p>Get shoutout commands, glowing effects & early access to crates.</p>
-        <button class="btn">Buy for ₹199</button>
-      </div>
-
-      <div class="store-box">
-        <h3>4. LEGEND <small>(4th Top Rank)</small></h3>
-        <p>Includes /fly in spawn, cool prefix & private vault access!</p>
-        <button class="btn">Buy for ₹149</button>
-      </div>
-
-      <div class="store-box">
-        <h3>5. HERO <small>(5th Top Rank)</small></h3>
-        <p>Starter rank with essentials like /hat, /feed, and chat color change.</p>
-        <button class="btn">Buy for ₹99</button>
-      </div>
-
-      <div class="store-box">
-        <h3>6. NOBEL <small>(6th Top Rank)</small></h3>
-        <p>Beginner rank with colorful name and player list highlight.</p>
-        <button class="btn">Buy for ₹49</button>
-      </div>
-
-    </div>
-  </section>
+  <header><h1>PandaMC Ranks</h1></header>
+  <h2>Select Your Rank</h2>
+  <div class="store-categories">
+    <div class="store-box"><h3>🐼 PANDA+</h3><p>Top rank with all perks unlocked!</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>💀 DEADLIEST</h3><p>2nd top rank with powerful abilities.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>⭐ FAMOUS</h3><p>3rd top rank for rising legends.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>🔥 LEGEND</h3><p>Show your legendary status.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>🛡️ HERO</h3><p>Be the hero of the lifesteal world.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+    <div class="store-box"><h3>🎖️ NOBEL</h3><p>Entry-level rank to start your journey.</p><a href="https://dsc.gg/panda-mc" class="btn">Buy</a></div>
+  </div>
 </body>
 </html>
