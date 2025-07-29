@@ -1,106 +1,283 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PandaMC 🐼 Official Store</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>PandaMC - #1 Indian Lifesteal Server</title>
+  <link rel="icon" href="https://cdn.discordapp.com/icons/1377279996468400179/6d6d5f7def01ce5652d9550128330fda.webp?size=2048">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: linear-gradient(to bottom right, #11998e, #38ef7d);
+      font-family: 'Arial', sans-serif;
+      background: url('https://i.postimg.cc/nMfZxfDC/images-2.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
-    .discord-btn {
+
+    .leaves {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #5865F2;
-      color: white;
-      padding: 12px 14px;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
-      text-decoration: none;
-      transition: transform 0.2s ease;
-      z-index: 999;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
     }
-    .discord-btn:hover { transform: scale(1.1); background: #4752c4; }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem;
+
+    .leaf {
+      position: absolute;
+      top: -10%;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/2909/2909763.png') no-repeat center/contain;
+      animation: fall linear infinite;
+      opacity: 0.5;
     }
-    .logo {
-      width: 160px;
-      height: auto;
-      margin-bottom: 1rem;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
     }
-    .subtitle {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    header p { font-size: 1.1rem; color: #f0e6ff; }
-    nav {
+
+    .navbar {
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem 0;
-      margin-bottom: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.7);
     }
-    nav a {
+
+    .navbar h1 {
+      font-size: 28px;
+      color: #00ffe0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: background 0.3s;
     }
-    nav a:hover { background: rgba(255, 255, 255, 0.2); }
-    .description {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
+
+    .hero {
       text-align: center;
-      font-size: 1.1rem;
-      background: rgba(0,0,0,0.2);
-      border-radius: 20px;
+      padding: 60px 20px;
     }
-    footer {
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    .glowing-logo {
+      filter: drop-shadow(0 0 10px #00ffe0) drop-shadow(0 0 20px #00ffe0);
+      animation: pulse 2s infinite ease-in-out, float 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #00ffe0) drop-shadow(0 0 20px #00ffe0);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 20px #00ffe0) drop-shadow(0 0 40px #00ffe0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-top: 20px;
+      color: #00ffe0;
+    }
+
+    section {
+      padding: 40px 20px;
       text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 1000px;
     }
-    footer p { font-size: 0.9rem; }
+
+    .store-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .store-box {
+      background: rgba(20, 20, 20, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px #00ffe04d;
+      transition: transform 0.3s ease;
+    }
+
+    .store-box:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn.glow {
+      background-color: #00ffe0;
+      color: #000;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn.glow:hover {
+      background-color: #00e0c0;
+      transform: scale(1.05);
+    }
+
+    .discord-link i {
+      margin-right: 5px;
+    }
+
+    .ip {
+      font-family: monospace;
+      font-size: 18px;
+      color: #00ffe0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .store-categories {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      section {
+        padding: 30px 15px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <a href="https://dsc.gg/panda-mc" target="_blank" class="discord-btn">
-    <i class="fab fa-discord"></i>
-  </a>
+  <!-- Animated Leaves Background -->
+  <div class="leaves" id="leaves"></div>
+
   <header>
-    <img src="https://cdn.discordapp.com/icons/1377279996468400179/6d6d5f7def01ce5652d9550128330fda.webp?size=2048" alt="PandaMC Logo" class="logo" />
-    <div class="subtitle">PandaMC 🐼 Official Website</div>
-    <p>Welcome to the official PandaMC store</p>
+    <div class="navbar">
+      <h1>PandaMC</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#join">Join</a></li>
+          <li><a href="#store">Store</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="ranks.html">Ranks</a>
-    <a href="coins.html">Coins</a>
-    <a href="keys.html">Crate Keys</a>
-    <a href="redeem_code.html">Redeem</a>
-  </nav>
-  <div class="description">
-    <p>
-      Step into the world of <strong>PandaMC</strong>, where your Minecraft experience gets a major upgrade! This is the official store where you can purchase exclusive ranks, in-game currency (coins), and rare crate keys to unlock powerful rewards. Whether you're looking to gain an edge in combat or just want to stand out with prestige, our store has everything you need. All purchases directly support the server's growth and help us deliver more exciting features. Start your PandaMC journey today!
-    </p>
+
+  <section class="hero">
+    <img class="logo glowing-logo" src="https://cdn.discordapp.com/icons/1377279996468400179/6d6d5f7def01ce5652d9550128330fda.webp?size=2048" alt="PandaMC Logo">
+    <h2>#1 Indian Lifesteal Server</h2>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About PandaMC</h2>
+    <p>PandaMC is India’s most thrilling Minecraft Lifesteal experience! Engage in competitive battles, claim epic loot,
+      and rise through the leaderboard.</p>
+  </section>
+
+  <section class="join" id="join">
+    <h2>Join PandaMC</h2>
+    <p>Play on Java or Bedrock!</p>
+    <div class="server-info">
+      <strong>Server IP:</strong> <span class="ip">Soon</span>
+      <button class="btn glow" disabled>Copy IP</button>
+      <br>
+      <a href="https://dsc.gg/panda-mc" target="_blank" class="discord-link btn glow"><i class="fab fa-discord"></i> Join Discord</a>
+    </div>
+  </section>
+
+  <section class="store" id="store">
+
+  <h2>Store</h2>
+
+  <div class="store-categories">
+
+    <div class="store-box">
+
+      <h3>Ranks</h3>
+
+      <p>Panda+, Legend, Master and more exclusive ranks to unlock perks!</p>
+
+      <a href="ranks.html"><button class="btn glow">Buy Ranks</button></a>
+
+    </div>
+
+    <div class="store-box">
+
+      <h3>Coins</h3>
+
+      <p>Purchase coins to use in-game for trades, cosmetics & more.</p>
+
+      <a href="coins.html"><button class="btn glow">Buy Coins</button></a>
+
+    </div>
+
+    <div class="store-box">
+
+      <h3>Keys</h3>
+
+      <p>Unlock mystery crates and win epic rewards!</p>
+
+      <a href="keys.html"><button class="btn glow">Buy Keys</button></a>
+
+    </div>
+
   </div>
-  <footer>
-    <p>&copy; 2025 PandaMC 🐼 Store. All Rights Reserved.</p>
-  </footer>
+
+</section>
+
+  <script>
+    // Generate falling leaves dynamically
+    const leavesContainer = document.getElementById("leaves");
+
+    for (let i = 0; i < 25; i++) {
+      const leaf = document.createElement("div");
+      leaf.classList.add("leaf");
+      leaf.style.left = `${Math.random() * 100}vw`;
+      leaf.style.animationDuration = `${5 + Math.random() * 5}s`;
+      leaf.style.animationDelay = `${Math.random() * 5}s`;
+      leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
+      leavesContainer.appendChild(leaf);
+    }
+  </script>
 </body>
 </html>
