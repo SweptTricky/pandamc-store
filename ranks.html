@@ -3,62 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <title>Buy Ranks - PandaMC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url('https://i.postimg.cc/nMfZxfDC/images-2.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     header {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      animation: slideDown 1s ease;
     }
-    .navbar h1 {
-      margin: 0;
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+    .navbar h1 { font-size: 1.5rem; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
     nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
+      text-decoration: none; color: white;
+      font-weight: bold; transition: color 0.3s;
     }
-    .store-page {
-      padding: 2rem;
-      text-align: center;
-    }
+    nav a:hover { color: #ff4d4d; }
+    .store-page { padding: 2rem; text-align: center; }
     .store-categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+      display: flex; flex-wrap: wrap;
+      gap: 2rem; justify-content: center; margin-top: 2rem;
     }
     .store-box {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 1.5rem;
-      border-radius: 12px;
+      padding: 1.5rem; border-radius: 12px;
       width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .store-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.8);
     }
     .btn {
-      margin-top: 1rem;
-      padding: 0.5rem 1.2rem;
-      border: none;
-      border-radius: 8px;
+      margin-top: 1rem; padding: 0.5rem 1.2rem;
+      border: none; border-radius: 8px;
       background-color: #ff4747;
-      color: white;
-      cursor: pointer;
+      color: white; cursor: pointer;
       font-size: 1rem;
+      transition: background 0.3s, transform 0.2s;
     }
     .btn:hover {
       background-color: #ff2f2f;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -73,26 +76,47 @@
       </ul>
     </nav>
   </header>
-
   <section class="store-page">
     <h2>Buy Ranks</h2>
     <div class="store-categories">
+
       <div class="store-box">
-        <h3>Panda+</h3>
-        <p>Get exclusive prefix, particles and /hat command!</p>
-        <button class="btn">Buy for ₹49</button>
+        <h3>1. PANDA+ <small>(Top Rank)</small></h3>
+        <p>Access all features, exclusive tag, custom particles, priority queue & more!</p>
+        <button class="btn">Buy for ₹299</button>
       </div>
+
       <div class="store-box">
-        <h3>Legend</h3>
-        <p>Includes all Panda+ perks + /nick & /fly in spawn!</p>
-        <button class="btn">Buy for ₹99</button>
+        <h3>2. DEADLIEST <small>(2nd Top Rank)</small></h3>
+        <p>Deadly perks, kill effects, red name & access to /trail!</p>
+        <button class="btn">Buy for ₹249</button>
       </div>
+
       <div class="store-box">
-        <h3>Master</h3>
-        <p>All previous perks + priority queue and custom tag!</p>
+        <h3>3. FAMOUS <small>(3rd Top Rank)</small></h3>
+        <p>Get shoutout commands, glowing effects & early access to crates.</p>
+        <button class="btn">Buy for ₹199</button>
+      </div>
+
+      <div class="store-box">
+        <h3>4. LEGEND <small>(4th Top Rank)</small></h3>
+        <p>Includes /fly in spawn, cool prefix & private vault access!</p>
         <button class="btn">Buy for ₹149</button>
       </div>
+
+      <div class="store-box">
+        <h3>5. HERO <small>(5th Top Rank)</small></h3>
+        <p>Starter rank with essentials like /hat, /feed, and chat color change.</p>
+        <button class="btn">Buy for ₹99</button>
+      </div>
+
+      <div class="store-box">
+        <h3>6. NOBEL <small>(6th Top Rank)</small></h3>
+        <p>Beginner rank with colorful name and player list highlight.</p>
+        <button class="btn">Buy for ₹49</button>
+      </div>
+
     </div>
   </section>
 </body>
-        </html>
+</html>
