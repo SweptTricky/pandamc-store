@@ -183,6 +183,24 @@
         padding: 30px 15px;
       }
     }
+
+    /* Glowing Name Style */
+    .glow-name {
+      color: #00ffe0;
+      font-size: 24px;
+      animation: nameGlow 2s infinite ease-in-out;
+      text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
+      margin: 15px 0 5px 0;
+    }
+
+    @keyframes nameGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
+      }
+      50% {
+        text-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0;
+      }
+    }
   </style>
 </head>
 
@@ -226,44 +244,49 @@
   </section>
 
   <section class="store" id="store">
+    <h2>Store</h2>
+    <div class="store-categories">
+      <div class="store-box">
+        <h3>Ranks</h3>
+        <p>Panda+, Legend, Master and more exclusive ranks to unlock perks!</p>
+        <a href="ranks.html"><button class="btn glow">Buy Ranks</button></a>
+      </div>
 
-  <h2>Store</h2>
+      <div class="store-box">
+        <h3>Coins</h3>
+        <p>Purchase coins to use in-game for trades, cosmetics & more.</p>
+        <a href="coins.html"><button class="btn glow">Buy Coins</button></a>
+      </div>
 
-  <div class="store-categories">
+      <div class="store-box">
+        <h3>Keys</h3>
+        <p>Unlock mystery crates and win epic rewards!</p>
+        <a href="keys.html"><button class="btn glow">Buy Keys</button></a>
+      </div>
+    </div>
+  </section>
 
-    <div class="store-box">
+  <!-- NEW: Founders Section -->
+  <section class="founders" id="founders">
+    <h2>Our Server Main Owners / Founders</h2>
+    <div class="store-categories">
 
-      <h3>Ranks</h3>
+      <div class="store-box">
+        <img src="https://i.postimg.cc/T1f2PfhQ/images.jpg" alt="OpSiond" style="border-radius: 15px; width: 100%; height: auto; max-height: 220px; object-fit: cover;">
+        <h3 class="glow-name">Owner OpSiond</h3>
+        <p><strong>Server Owner</strong></p>
+        <p>Mastermind behind PandaMC. Leads innovation, gameplay design & community strategies. [Also this Website Creator!].</p>
+      </div>
 
-      <p>Panda+, Legend, Master and more exclusive ranks to unlock perks!</p>
-
-      <a href="ranks.html"><button class="btn glow">Buy Ranks</button></a>
+      <div class="store-box">
+        <img src="https://i.postimg.cc/J7pCXbFR/Screenshot-2025-07-30-15-30-58-61.jpg" alt="Kakarot" style="border-radius: 15px; width: 100%; height: auto; max-height: 220px; object-fit: cover;">
+        <h3 class="glow-name">Founder Kakarot</h3>
+        <p><strong>Server Founder</strong></p>
+        <p>Founder of the server universe. Guides the legacy and core lifesteal direction of PandaMC.</p>
+      </div>
 
     </div>
-
-    <div class="store-box">
-
-      <h3>Coins</h3>
-
-      <p>Purchase coins to use in-game for trades, cosmetics & more.</p>
-
-      <a href="coins.html"><button class="btn glow">Buy Coins</button></a>
-
-    </div>
-
-    <div class="store-box">
-
-      <h3>Keys</h3>
-
-      <p>Unlock mystery crates and win epic rewards!</p>
-
-      <a href="keys.html"><button class="btn glow">Buy Keys</button></a>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
   <script>
     // Generate falling leaves dynamically
@@ -280,4 +303,4 @@
     }
   </script>
 </body>
-</html>
+  </html>
